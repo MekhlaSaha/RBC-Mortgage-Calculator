@@ -21,16 +21,16 @@ describe('CalculationSummaryComponent', () => {
         paymentPlan: {
           amortizationMonths: null,
           amortizationYears: '24',
-          interestRate: "3",
-          mortgageAmount: "1000000.00",
-          paymentFrequency: "Monthly",
+          interestRate: '3',
+          mortgageAmount: '1000000.00',
+          paymentFrequency: 'Monthly',
           term: '5'
         },
         payment: '24',
-        prepaymentAmount: "1000000.00",
-        prepaymentFrequency: "One time"
+        prepaymentAmount: '1000000.00',
+        prepaymentFrequency: 'One time'
       })
-    }
+    };
     TestBed.configureTestingModule({
       imports: [CommonModule,
         MockModule(MatTableModule),

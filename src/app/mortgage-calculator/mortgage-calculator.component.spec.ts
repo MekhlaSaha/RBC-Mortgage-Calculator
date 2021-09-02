@@ -17,9 +17,9 @@ describe('MortgageCalculatorComponent', () => {
   let component: MortgageCalculatorComponent;
   let fixture: ComponentFixture<MortgageCalculatorComponent>;
   let mortgageCalculatorService: any;
-  let mortgageCalculatorServiceValue = {
+  const mortgageCalculatorServiceValue = {
     mortgageCalculatorSubject: new Subject()
-  }
+  };
   let mortgageCalcSpy: jasmine.Spy;
 
   beforeEach(waitForAsync(() => {
@@ -57,12 +57,12 @@ describe('MortgageCalculatorComponent', () => {
         paymentPlanForm: {
           value: {}
         }
-      }
+      };
       component.prepaymentPlan = {
         prepaymentPlanForm: {
           value: {}
         }
-      }
+      };
       component.onCalculate();
       expect(mortgageCalcSpy).toHaveBeenCalled();
       mortgageCalculatorServiceValue.mortgageCalculatorSubject.subscribe(response => {
