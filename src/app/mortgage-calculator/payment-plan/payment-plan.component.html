@@ -1,0 +1,54 @@
+<mat-card>
+  <mat-card-title>Payment Plan</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="paymentPlanForm">
+      <p>
+        <mat-form-field class="full-width">
+          <mat-label>Mortgage Amount:</mat-label>
+          <span matPrefix>$ &nbsp;</span><input matInput id="mortgage-amount" type="text"
+            formControlName="mortgageAmount">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="full-width">
+          <mat-label>Interest Rate:</mat-label>
+          <input matInput id="interest-rate" type="text" formControlName="interestRate">
+          <span matSuffix>%</span>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="full-width">
+          <mat-label>Amortization Period:</mat-label>
+          <mat-select formControlName="amortizationYears">
+            <mat-option *ngFor="let year of amortizationYears" [value]="year">{{year}} {{year>1?'Years':'Year'}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select formControlName="amortizationMonths">
+            <mat-option *ngFor="let month of amortizationMonths" [value]="month">{{month}} {{month>1?'Months':'Month'}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="full-width">
+          <mat-label>Payment Frequency:</mat-label>
+          <mat-select formControlName="paymentFrequency">
+            <mat-option *ngFor="let month of paymentFrequencies" [value]="month">{{month}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="full-width">
+          <mat-label>Term:</mat-label>
+          <mat-select formControlName="term">
+            <mat-option *ngFor="let term of termList" [value]="term">{{term}} {{term>1?'Years':'Year'}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+    </form>
+  </mat-card-content>
+</mat-card>

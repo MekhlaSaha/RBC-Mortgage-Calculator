@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <app-payment-plan #paymentPlan></app-payment-plan>
+    </div>
+    <div class="col-lg-6">
+      <app-prepayment-plan #prepaymentPlan></app-prepayment-plan>
+    </div>
+  </div>
+  <button mat-raised-button (click)="onCalculate()">Calculate</button>
+  <app-calculation-summary></app-calculation-summary>
+</div>
