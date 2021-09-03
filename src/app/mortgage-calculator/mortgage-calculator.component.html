@@ -8,6 +8,9 @@
       <app-prepayment-plan #prepaymentPlan></app-prepayment-plan>
     </div>
   </div>
-  <button mat-raised-button (click)="onCalculate()">Calculate</button>
+    <button mat-raised-button
+    (click)="onCalculate()"
+    [disabled]="!isFormValid(paymentPlan?.paymentPlanForm) || !isFormValid(prepaymentPlan?.prepaymentPlanForm)"
+    >Calculate</button>
   <app-calculation-summary></app-calculation-summary>
 </div>

@@ -8,7 +8,7 @@ import { CalculationSummaryComponent } from './calculation-summary/calculation-s
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MockModule, MockProvider } from 'ng-mocks';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MortgageCalculatorService } from './mortgage-calculator.service';
 import { Subject } from 'rxjs';
@@ -68,6 +68,18 @@ describe('MortgageCalculatorComponent', () => {
       mortgageCalculatorServiceValue.mortgageCalculatorSubject.subscribe(response => {
         expect(response).toBeDefined();
       });
+    });
+  });
+
+  describe('isFormValid', () => {
+    it('should return true when the form is valid', () => {
+      const form = new FormGroup({});
+      expect(component.isFormValid(form)).toBeTrue();
+    });
+    it('should return false when the form is invalid', () => {
+      const form = new FormGroup({});
+      form.setErrors({});
+      expect(component.isFormValid(form)).toBeFalse();
     });
   });
 });

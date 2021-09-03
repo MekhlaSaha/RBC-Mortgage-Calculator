@@ -1,11 +1,12 @@
 <mat-card>
-  <mat-card-title>Payment Plan</mat-card-title>
+  <mat-card-title>Prepayment Plan</mat-card-title>
   <mat-card-content>
     <form [formGroup]="prepaymentPlanForm">
       <p>
         <mat-form-field class="full-width">
           <mat-label>Prepayment Amount:</mat-label>
-          <span matPrefix>$ &nbsp;</span><input matInput id="mortgage-amount" type="text"
+          <span matPrefix>$ &nbsp;</span>
+          <input matInput id="mortgage-amount" type="number"
             formControlName="prepaymentAmount">
         </mat-form-field>
       </p>
@@ -21,7 +22,7 @@
       <p>
         <mat-form-field class="full-width">
           <mat-label>Start With Payment:</mat-label>
-          <input matInput id="payment" type="text" formControlName="payment">
+          <input matInput id="payment" type="number" formControlName="payment">
         </mat-form-field>
       </p>
     </form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-prepayment-plan',
@@ -13,9 +13,9 @@ export class PrepaymentPlanComponent implements OnInit {
   termList = [...Array(11).keys()].slice(1);
 
   prepaymentPlanForm = new FormGroup({
-    prepaymentAmount: new FormControl('1000000.00'),
-    prepaymentFrequency: new FormControl(this.prepaymentFrequencies[0]),
-    payment: new FormControl(24)
+    prepaymentAmount: new FormControl('1000000', Validators.required),
+    prepaymentFrequency: new FormControl(this.prepaymentFrequencies[0], Validators.required),
+    payment: new FormControl(24, Validators.required)
   });
   constructor() { }
 
